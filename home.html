@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Pacac High School</title>
+    <link rel="stylesheet" href="homeandcontacts.css">
+</head>
+<body>
+<div id="pagewrapper">
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="school-logo.png" alt="School Logo">
+            <h1>PACAC HIGH SCHOOL</h1>
+        </div>
+        <nav>
+            <a href="HOME.html" class="active">Home</a>
+            <a href="ABOUTT.html">About</a>
+            <a href="CONTACTSS.html">Contacts</a>
+            <a href="COURSESS.html">Courses</a>
+            <a href="FLAGCEREM.html">Flag Ceremony</a>
+            <a href="DESTINATIONS.html">Facilities</a>
+            <a href="EVENTS.html">Events</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-box">
+        <h2>WELCOME TO PACAC HIGH SCHOOL!</h2>
+        <p>Empowering students with knowledge, values, and skills for a brighter future. Explore our campus, programs, and events to experience excellence in learning and to get to know PHS more!</p>
+        <a href="#main-content" class="btn">Learn More</a>
+    </div>
+</section>
+
+<main id="main-content">
+    <section class="main-section">
+        <div class="section-box">
+            <h2>Empowering Minds. Shaping Futures.</h2>
+            <p>At Pacac High School, we provide a supportive and inclusive environment where students can grow academically, socially, and emotionally. Our dedicated teachers and staff help students discover their strengths, develop their skills, and reach their full potential.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>Important Announcements</h2>
+            <div class="announcements">
+<div class="announcements">
+    <div class="announcement">
+        <img src="eregist.jpg" alt="Early Registration">
+        <h3>Early Registration</h3>
+        <p>Sign up now for the next academic year. Secure your spot early!</p>
+    </div>
+    <div class="announcement">
+        <img src="ictsc.jpg" alt="ICT Screening">
+        <h3>ICT Screening</h3>
+        <p>Prepare for the ICT screening. Schedule and guidelines are posted here.</p>
+    </div>
+    <div class="announcement">
+        <img src="scev.jpg" alt="School Events">
+        <h3>School Events</h3>
+        <p>Check out upcoming school events and activities happening this month.</p>
+    </div>
+    <div class="announcement">
+        <img src="bboard.jpg" alt="Announcements Bulletin Board">
+        <h3>Announcements Bulletin Board</h3>
+        <p>Check all the school notices and announcements in one place.</p>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <div class="video-gradient-card">
+                <video src="school-video.mp4" autoplay muted loop></video>
+            </div>
+        </div>
+
+        <div class="signature-banner">
+            <div class="banner-overlay">
+                <h2>AIM HIGH PHS!</h2>
+                <p>Reach for excellence, achieve your dreams.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-line"></div>
+    ©2026 | Pacac High School
+</footer>
+
+<script>
+    document.querySelector('.btn').addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector('#main-content').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+</div>
+</body>
+</html>
