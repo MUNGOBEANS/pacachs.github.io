@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    background: url("PHS-BG.jpg") center/cover no-repeat fixed;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,64,0.7) 100%);
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header .logo h1 {
+    font-size: 22px;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.5s cubic-bezier(.77,0,.175,1);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #00f0ff, #ff00d4);
+    transition: all 0.5s cubic-bezier(.77,0,.175,1);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: #00f0ff;
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+.main-section {
+    padding: 180px 5% 80px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
+
+.cards {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.card {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 20px;
+    width: 260px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.2s, 0s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s, 0s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s, 0s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.8s, 0s;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, #00f0ff, #ff00d4);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.section-box {
+    padding: 25px 30px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+
+    animation: glowPulse 2s infinite alternate;
+}
+
+.section-box h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #00ffff;
+    text-shadow: 1px 1px 10px #00ffff;
+}
+
+.section-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.footer-line {
+    height: 5px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #00f0ff, #ff00d4, #ffea00, #00ff5e);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    100% {
+        box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff, 0 0 75px #00ffff;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px 10px;
+    }
+
+    .section-box {
+        width: 90%;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .btn {
+        width: 90%;
+    }
+}
+
+#pagewrapper {
+  opacity: 0;           
+  animation: fadeInPage 1s ease forwards; 
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+

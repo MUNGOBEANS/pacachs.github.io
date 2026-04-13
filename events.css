@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    background: url("PHS-BG.jpg") center/cover no-repeat fixed;
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,64,0.7));
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header .logo h1 {
+    font-size: 22px;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 5px 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.5s cubic-bezier(.77,0,.175,1);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #00f0ff, #ff00d4);
+    transition: all 0.5s cubic-bezier(.77,0,.175,1);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: #00f0ff;
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+.main-section {
+    padding: 180px 5% 80px;
+    text-align: center;
+}
+
+.section-heading {
+    font-family: 'Fredoka One', cursive;
+    font-size: 36px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    width: 300px;
+    padding: 25px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    color: #00ffff;
+    margin-bottom: 10px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 0 40px #00ffff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-line {
+    height: 5px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #00f0ff, #ff00d4, #ffea00, #00ff5e);
+}
+
+#pagewrapper {
+    opacity: 0;
+    animation: fadeInPage 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    nav { flex-wrap: wrap; justify-content: center; }
+    nav a { margin: 5px 10px; }
+    .card, .main-section { width: 90%; }
+}

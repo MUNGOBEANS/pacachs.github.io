@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* { 
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; 
+font-family: 'Poppins', sans-serif; 
+    
+}
+
+
+body {
+position: relative;
+background: url("PHS-BG.jpg") center/cover no-repeat fixed;
+color: white;
+scroll-behavior: smooth;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,64,0.7) 100%);
+z-index: -1;
+}
+
+header {
+width: 100%;
+background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+padding: 15px 5%;
+position: fixed;
+top: 0;
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+header .logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    
+}
+
+header .logo img { 
+    width: 50px; 
+}
+
+header .logo h1 { 
+    font-size: 22px; 
+    color: white; 
+    font-family: 'Fredoka One', cursive; 
+    letter-spacing: 1px; 
+    
+}
+
+nav a {
+text-decoration: none;
+color: white;
+margin-left: 25px;
+font-weight: 600;
+position: relative;
+padding-bottom: 5px;
+transition: all 0.5s cubic-bezier(.77,0,.175,1);
+}
+
+nav a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 0%;
+height: 3px;
+background: linear-gradient(90deg, #00f0ff, #ff00d4);
+transition: all 0.5s cubic-bezier(.77,0,.175,1);
+}
+
+nav a:hover::after { 
+    width: 100%; 
+    
+}
+
+nav a.active { 
+    color: #00f0ff; 
+    
+}
+
+nav a.active::after { 
+    width: 100%; 
+    
+}
+
+.hero {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 0 20px;
+}
+
+.hero-box {
+background: rgba(0,0,0,0.6);
+padding: 40px 30px;
+border-radius: 25px;
+box-shadow: 0 10px 50px rgba(0,0,0,0.7);
+animation: fadeInUp 1s ease forwards;
+}
+
+.hero-box h2 {
+font-family: 'Fredoka One', cursive;
+font-size: 42px;
+margin-bottom: 15px;
+background: linear-gradient(90deg, #00f0ff, #ff00d4);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.hero-box p { 
+    font-size: 18px; 
+    margin-bottom: 25px; 
+    line-height: 1.5; 
+}
+
+.btn {
+display: inline-block;
+padding: 15px 35px;
+background: linear-gradient(45deg, #00f0ff, #ff00d4);
+color: white;
+text-decoration: none;
+border-radius: 30px;
+font-weight: 700;
+font-size: 16px;
+transition: all 0.4s ease-in-out;
+box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+.btn:hover { 
+    transform: scale(1.1) rotate(-2deg); 
+    
+}
+
+.main-section { 
+    padding: 120px 5% 80px 5%; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 50px; 
+}
+
+.section-box {
+background: linear-gradient(to bottom right, rgba(0,0,64,0.7), rgba(0,128,255,0.5));
+padding: 30px 25px;
+border-radius: 25px;
+box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+animation: fadeInUp 1s ease forwards;
+}
+
+.section-box h2 {
+font-family: 'Fredoka One', cursive;
+font-size: 32px;
+margin-bottom: 15px;
+color: #fff;
+text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.section-box p { font-size: 16px; line-height: 1.6; }
+
+.announcements {
+display: flex;
+flex-wrap: wrap;
+gap: 25px;
+justify-content: center;
+}
+
+.announcement {
+flex: 1 1 250px;
+background: rgba(0,0,0,0.6);
+padding: 20px;
+border-radius: 20px;
+text-align: center;
+box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+transition: transform 0.5s cubic-bezier(.77,0,.175,1), box-shadow 0.5s;
+}
+
+.announcement:hover { 
+    transform: translateY(-10px) scale(1.05); box-shadow: 0 20px 50px rgba(0,0,0,0.6); 
+}
+
+.announcement h3 { 
+    font-family: 'Fredoka One', cursive;
+    margin-bottom: 10px; 
+    font-size: 20px; 
+    background: linear-gradient(90deg, #00f0ff, #ff00d4); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+.announcement p { 
+    font-size: 14px; 
+    line-height: 1.5; 
+}
+
+.video-gradient-card {
+margin: 0 auto;
+width: 90%;
+max-width: 900px;
+border-radius: 25px;
+overflow: hidden;
+padding: 5px;
+background: linear-gradient(270deg, #00f0ff, #ff00d4, #ffea00, #00ff5e);
+background-size: 800% 800%;
+animation: gradientMove 6s ease infinite;
+box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.video-gradient-card video { width: 100%; border-radius: 20px; display: block; }
+
+.signature-banner {
+margin-top: 60px;
+height: 250px;
+width: 95%;
+max-width: 1200px;
+background: url("AIMHIGHPHS.jpg") center/cover no-repeat; position: relative; border-radius: 25px; overflow: hidden; box-shadow: 0 -10px 30px rgba(0,0,0,0.2); margin-left: auto; margin-right: auto; }
+
+.banner-overlay {
+position: absolute;
+bottom: 40px;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+color: white;
+z-index: 1;
+animation: fadeUp 1.2s ease;
+}
+
+.banner-overlay h2 {
+font-family: 'Fredoka One', cursive;
+font-size: 36px; letter-spacing: 2px; margin-bottom: 10px;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+.banner-overlay p {
+font-size: 16px;
+opacity: 0.95;
+
+}
+
+footer {
+text-align: center;
+padding-bottom: 20px;
+margin-top: 50px;
+color: #ccc;
+font-size: 14px;
+
+}
+.footer-line {
+height: 5px;
+margin-bottom: 15px;
+background: linear-gradient
+(to right, #00f0ff, #ff00d4, #ffea00, #00ff5e);
+}
+
+@keyframes gradientMove {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+.container { flex-direction: column; }
+nav { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; }
+nav a { margin: 5px 10px; }
+.hero-box, .section-box, .announcement, .video-gradient-card { width: 90%; }
+}
+
+.social-media-section { text-align: center; margin: 50px 0; }
+
+.social-cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+}
+
+.social-card {
+background: linear-gradient(145deg, rgba(0,191,255,0.25), rgba(255,0,255,0.25));
+backdrop-filter: blur(12px);
+border-radius: 25px;
+padding: 20px;
+width: 260px;
+text-align: center;
+color: white;
+box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 50px rgba(0,255,255,0.5);
+}
+
+.social-card img {
+width: 100%;
+height: 160px;
+object-fit: cover;
+border-radius: 15px;
+margin-bottom: 10px;
+transition: transform 0.3s ease;
+}
+
+.social-card img:hover {
+transform: scale(1.05);
+
+}
+
+.social-card h3 {
+color: #00ffff;
+text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+margin-bottom: 8px;
+
+}
+
+.social-card p {
+font-size: 14px;
+opacity: 0.9;
+}
+
+.page-section.contacts-section {
+padding-top: 140px;
+padding-left: 5%;
+padding-right: 5%;
+text-align: center;
+}
+
+.welcome-box {
+background: rgba(50,50,50,0.7);
+backdrop-filter: blur(12px);
+padding: 25px 30px;
+border-radius: 20px;
+max-width: 900px;
+margin: 30px auto;
+box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.cards {
+margin-top: 50px;
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.card {
+background: rgba(50,50,50,0.7);
+color: white;
+padding: 35px;
+width: 280px;
+border-radius: 20px;
+box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+transition: transform 0.4s ease-in-out;
+}
+
+.card:hover {
+transform: translateY(-12px);
+}
+
+.social-heading {
+margin-top: 80px;
+font-family: 'Fredoka One', cursive;
+font-size: 32px;
+color: #00bfff;
+text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+}
+
+.social-section {
+margin-top: 50px;
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.social-box {
+background: rgba(50,50,50,0.7);
+color: white;
+width: 280px;
+padding: 20px;
+border-radius: 20px;
+box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+text-align: center;
+transition: transform 0.4s ease-in-out;
+}
+
+.social-box:hover {
+transform: translateY(-10px);
+}
+
+.social-box img {
+width: 100%;
+height: 170px;
+object-fit: cover;
+border-radius: 15px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.social-box img:hover {
+transform: scale(1.03);
+}
+
+.page-section.contacts-section {
+padding-top: 140px;
+padding-left: 5%;
+padding-right: 5%;
+text-align: center;
+}
+
+.neon-box {
+background: rgba(0,0,0,0.7);
+padding: 25px 30px;
+border-radius: 20px;
+box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff;
+border: 2px solid #00ffff;
+transition: 0.3s;
+}
+
+.neon-box:hover {
+box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff, 0 0 75px #00ffff;
+}
+
+.cards {
+margin-top: 50px;
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.card {
+color: white;
+width: 280px;
+border-radius: 20px;
+text-align: center;
+transition: transform 0.4s ease-in-out;
+}
+
+.card:hover {
+transform: translateY(-12px);
+}
+
+.social-heading {
+margin-top: 80px;
+font-family: 'Fredoka One', cursive;
+font-size: 32px;
+color: #00ffff;
+text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+}
+
+.social-section {
+margin-top: 50px;
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.social-box {
+width: 280px;
+padding: 20px;
+border-radius: 20px;
+text-align: center;
+transition: transform 0.4s ease-in-out;
+}
+
+.social-box img {
+width: 100%;
+height: 170px;
+object-fit: cover;
+border-radius: 15px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.social-box img:hover {
+transform: scale(1.03);
+}
+
+.card {
+animation: fadeInUp 0.8s ease forwards;
+opacity: 0;
+}
+
+.card:nth-child(1) {
+animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+animation-delay: 0.4s;
+}
+
+.card:nth-child(3) {
+animation-delay: 0.6s;
+}
+
+.card:nth-child(4) {
+animation-delay: 0.8s;
+}
+
+.card:nth-child(5) {
+animation-delay: 1s;
+}
+
+.card:nth-child(6) {
+animation-delay: 1.2s;
+}
+
+@keyframes fadeInUp {
+0% {
+opacity: 0;
+transform: translateY(40px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.card:hover {
+transform: scale(1.05) translateY(-10px);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pagewrapper {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.announcement img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.announcement img:hover {
+    transform: scale(1.05);
+}
